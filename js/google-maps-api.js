@@ -6,8 +6,8 @@
             zoom: zoomLevel,
 
             center: {
-                lat: 29.426791,
-                lng: -98.489602
+                lat: 29.870934,
+                lng: -97.938729
             }
         };
 
@@ -19,6 +19,18 @@
             console.log(status);
             map.setCenter(response[0].geometry.location);
         });
+        var pluckers = {lat: 29.870934, lng: -97.938729};
+
+        var marker = new google.maps.Marker({
+            position: pluckers,
+            map: map
+        });
+
+        var infowindow = new google.maps.InfoWindow({
+            content: "Pluckers"
+        });
+
+        infowindow.open(map, marker);
     }
 
     renderMap(10);
@@ -32,5 +44,9 @@
             console.log(this.value);
         }, false);
     }
+
+
+
+
 
 })();
