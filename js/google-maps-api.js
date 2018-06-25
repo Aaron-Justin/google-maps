@@ -18,8 +18,7 @@
         map.setCenter(response[0].geometry.location);
     });
 
-    var listener;
-    listener = function (event) {
+    var listener = function (event) {
         // alert("Zoom 5");
             mapOptions.zoom = 5;
 
