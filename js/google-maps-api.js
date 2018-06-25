@@ -16,7 +16,16 @@
     geo.geocode({address: "105 N Interstate 35 San Marcos, TX 78666"}, function (response, status) {
         console.log(status);
         map.setCenter(response[0].geometry.location);
-    })
+    });
 
+    var listener;
+    listener = function (event) {
+        // alert("Zoom 5");
+            mapOptions.zoom = 5;
+
+    };
+
+    var zoom5Button = document.getElementById("zoom-5-button");
+    zoom5Button.addEventListener('click', listener, false);
 
 })();
