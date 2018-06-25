@@ -23,14 +23,19 @@
 
         var marker = new google.maps.Marker({
             position: pluckers,
-            map: map
+            map: map,
+            animation: google.maps.Animation.DROP
         });
 
         var infowindow = new google.maps.InfoWindow({
-            content: "Pluckers"
+            content: "<h1 style='text-align: center'>Pluckers</h1><br>" +
+            "<h3 style='text-align: center'>Pluckers wings are dope</h3>"
         });
 
-        infowindow.open(map, marker);
+        marker.addListener('click', function() {
+            infowindow.open(map, marker);
+        });
+
     }
 
     renderMap(10);
